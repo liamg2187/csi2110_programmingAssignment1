@@ -1,0 +1,2 @@
+E C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\abcefString.txt C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\abcefString.huf
+D C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\abcefString.huf C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\abcefStringResult.txt

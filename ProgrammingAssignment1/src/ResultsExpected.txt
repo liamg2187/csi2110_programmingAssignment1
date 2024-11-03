@@ -1,0 +1,68 @@
+result of running: java TestCompression for "T tests.txt"
+---------------------------------------------------------
+
+Encoding genes.txt genes.huf
+Number of bytes in input : 13608
+Number of bytes in output: 3578
+
+Decoding genes.huf genesRecovered.txt
+Number of bytes in input : 3578
+Number of bytes in output: 13608
+
+Command Formats:
+E <inputfile> <outputfile>
+D <inputfile> <outputfile>
+T <testfile_with_commands>
+or type Q for quiting
+
+Enter command > T tests.txt
+
+Encoding genes.txt genes.huf
+Number of bytes in input : 13608
+Number of bytes in output: 3578
+
+Decoding genes.huf genesRecover.txt
+Number of bytes in input : 3578
+Number of bytes in output: 13608
+
+Encoding abcefString.txt abcefString.huf
+Number of bytes in input : 5750
+Number of bytes in output: 1323
+
+Decoding abcefString.huf abcefStringRecover.txt
+Number of bytes in input : 1323
+Number of bytes in output: 5750
+
+Encoding greeneggsandham.txt greeneggsandham.huf
+Number of bytes in input : 43164
+Number of bytes in output: 23483
+
+Decoding greeneggsandham.huf greeneggsandhamRecover.txt
+Number of bytes in input : 23483
+Number of bytes in output: 43164
+
+Encoding midsummer.txt midsummer.huf
+Number of bytes in input : 102793
+Number of bytes in output: 58647
+
+Decoding midsummer.huf midsummerRecover.txt
+Number of bytes in input : 58647
+Number of bytes in output: 102793
+
+Encoding don.jpg don.huf
+Number of bytes in input : 19405
+Number of bytes in output: 19385
+
+Decoding don.huf donRecover.jpg
+Number of bytes in input : 19385
+Number of bytes in output: 19405
+Test file was completed.
+
+Command Formats:
+E <inputfile> <outputfile>
+D <inputfile> <outputfile>
+T <testfile_with_commands>
+or type Q for quiting
+
+Enter command > Q
+Ended program.

@@ -1,0 +1,10 @@
+E ./src/testfiles/genes.txt ./src/testfiles/results/genes.huf
+D ./src/testfiles/results/genes.huf ./src/testfiles/results/genesRecover.txt
+E ./src/testfiles/abcefString.txt ./src/testfiles/results/abcefString.huf
+D ./src/testfiles/results/abcefString.huf ./src/testfiles/results/abcefStringRecover.txt
+E ./src/testfiles/greeneggsandham.txt ./src/testfiles/results/greeneggsandham.huf
+D ./src/testfiles/results/greeneggsandham.huf ./src/testfiles/results/greeneggsandhamRecover.txt
+E ./src/testfiles/midsummer.txt ./src/testfiles/results/midsummer.huf
+D ./src/testfiles/results/midsummer.huf ./src/testfiles/results/midsummerRecover.txt
+E ./src/testfiles/don.jpg ./src/testfiles/results/don.huf
+D ./src/testfiles/results/don.huf ./src/testfiles/results/donRecover.jpg

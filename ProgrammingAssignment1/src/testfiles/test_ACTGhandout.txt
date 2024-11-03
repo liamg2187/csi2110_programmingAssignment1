@@ -1,0 +1,2 @@
+E C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\ACTGhandout.txt C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\ACTGhandout.huf
+D C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\ACTGhandout.huf C:\Users\asmod\Documents\GitHub\csi2110\Assignments\csi2110_programmingAssignment1\ProgrammingAssignment1\src\testfiles\ACTGhandoutResult.txt
