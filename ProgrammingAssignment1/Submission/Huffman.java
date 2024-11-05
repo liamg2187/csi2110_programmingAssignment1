@@ -201,6 +201,7 @@ public class Huffman {
 	 */
 	private void encodeData(InputStream input, ArrayList<String> encodingTable, OutputStream output) throws IOException {
 		OutBitStream bitStream = new OutBitStream(output); // uses bitStream to output bit by bit
+		long encodedLength = 0;
 
 		int readByte = input.read();
 
@@ -208,6 +209,7 @@ public class Huffman {
 			char[] code = encodingTable.get(readByte).toCharArray();
 			for(char c : code) {
 				bitStream.writeBit(Integer.parseInt(String.valueOf(c)));
+				encodedLength++;
 			}
 			readByte = input.read();
 		}
@@ -215,8 +217,10 @@ public class Huffman {
 		char[] eof = encodingTable.get(256).toCharArray();
 		for (char c : eof) {
 			bitStream.writeBit(Integer.parseInt(String.valueOf(c)));
+			encodedLength++;
 		}
 
+		System.out.println("Number of bytes in output: " + encodedLength/8);
 		bitStream.close(); // close bit stream; flushing what is in the bit buffer to output file
 	}
 	
@@ -232,10 +236,13 @@ public class Huffman {
 		InBitStream inputBitStream= new InBitStream(input); // associates a bit stream to read bits from file
 		HuffmanTreeNode node = encodingTreeRoot;
 		boolean flag = false;
+		int encodedLength = 0;
 
 		while (!flag) {
 			while (!node.isLeaf()) {
 				int readBit = inputBitStream.readBit();
+				encodedLength++;
+
                 node = switch (readBit) {
                     case 0 -> node.getLeft();
                     case 1 -> node.getRight();
@@ -250,6 +257,8 @@ public class Huffman {
 			}
 			node = encodingTreeRoot;
 		}
+
+		System.out.println("Number of bytes in input: " + encodedLength / 8);
     }
 	
 	/**
@@ -262,7 +271,6 @@ public class Huffman {
 		System.out.println("\nEncoding "+inputFileName+ " " + outputFileName);
 
 		File inputFile = new File(inputFileName);
-		File outputFile = new File(outputFileName);
 
 		// prepare input and output files streams
 		FileInputStream input = new FileInputStream(inputFileName);
@@ -276,11 +284,8 @@ public class Huffman {
 		ArrayList<String> codes= buildEncodingTable(root);  // buildcodes for each character in file
 		System.out.println("EncodingTable is="+codes);
 		codedOutput.writeObject(freqTable); //write header with frequency table
-		encodeData(copyinput,codes,codedOutput); // write the Huffman encoding of each character in file
-
-
 		System.out.println("Number of bytes in input : " + inputFile.length());
-		System.out.println("Number of bytes in output : " + outputFile.length());
+		encodeData(copyinput,codes,codedOutput); // write the Huffman encoding of each character in file
 	}
 	
     /**
@@ -293,7 +298,6 @@ public class Huffman {
 	public void decode (String inputFileName, String outputFileName) throws IOException, ClassNotFoundException {
 		System.out.println("\nDecoding "+inputFileName+ " " + outputFileName);
 
-		File inputFile = new File(inputFileName);
 		File outputFile = new File(outputFileName);
 
 		// prepare input and output file streams
@@ -305,7 +309,6 @@ public class Huffman {
 		HuffmanTreeNode root= buildEncodingTree(freqTable);
 		decodeData(codedInput, root, output);
 
-		System.out.println("Number of bytes in input : " + inputFile.length());
 		System.out.println("Number of bytes in output : " + outputFile.length());
 	}
 	
